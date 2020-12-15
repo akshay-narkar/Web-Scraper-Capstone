@@ -1,44 +1,3 @@
-# class Scraper
-#   attr_reader :player_id
-
-#   def initialize(id)
-#     @player_id = id
-#     @browser = Watir::Browser.new
-#     @browser.goto "https://fantasy.premierleague.com/entry/#{player_id}/history"
-#     @playerdata = []
-#     @personaldata = []
-#   end
-# end
-#   def scraper_tool
-#     @browser.element(xpath: '/html/body/main/div/div[2]/div/div[2]/div/div[4]/div[1]/div[1]/div[2] /
-# /table/tbody/tr[1]/td[3]')
-#       .wait_until(&:present?)
-#     parsed = Nokogiri::HTML(@browser.html)
-#     parsed1 = parsed.css('#root > div:nth-child(2) > div > div.Layout__Main-eg6k6r-1.haICgV > div:nth-child(2) >
-#     div.Table__ScrollTable-ziussd-0.canFyp')
-#     parsed2 = parsed.css('#root > div:nth-child(2) > div > div.Layout__Secondary-eg6k6r-2.hyNLtH > div')
-#     parsed3 = parsed.css('#root > div:nth-child(2) > div > div.Layout__Secondary-eg6k6r-2.hyNLtH > div
-#     > div:nth-child(5) > div.Panel__StyledPanel-sc-1nmpshp-0.eSHooN > div:nth-child(1) > div:nth-child(2)')
-#     clubcoun = parsed3.css('tr>td')
-#     # headings = parsed1.css('thead')
-#     gwdata = parsed1.css('tbody > tr')
-#     gwdata.each do |inside|
-#       td1 = inside.css('td')
-#       overall = { GW: td1[0].text, Link: "https://fantasy.premierleague.com#{td1[0].css('a')[0].attributes['href']
-#         .value}",
-#                   GP: td1[1].text, PB: td1[2].text, GR: td1[3].text, TM: td1[4].text,
-#                   TC: td1[5].text, OP: td1[6].text, OR: td1[7].text, Value: td1[8].text, Rank: td1[9] }
-#       @playerdata << overall
-#     end
-#     teamname = parsed2.css('h4')[0].text
-#     playername = parsed2.css('h2')[0].text
-#     club = clubcoun[2].text
-#     country = clubcoun[5].text
-
-#     overall1 = { Playername: playername, Teamname: teamname, Club: club, Country: country }
-#     @personaldata << overall1
-#   end
-# end
 # rubocop: disable Layout/LineLength
 class TopHeader
   attr_reader :gwdata, :records, :counter
@@ -59,7 +18,6 @@ class TopHeader
     @gwdata = parsed100.css('tbody > tr')
   end
 
-  # td1 = css(td[1].css('a')[0].attributes['href'].value)
   def header
     td = gwdata.css('td')
     url = td[1].css('a')[0].attributes['href'].value
@@ -71,8 +29,6 @@ class TopHeader
     end
   end
 end
-
-# //*[@id="root"]/div[2]/div[2]/div[1]/div/table/tbody/tr[34]/td[2]/text()
 
 class Top < TopHeader
   def top100
