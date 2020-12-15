@@ -29,6 +29,14 @@ require_relative '../lib/scraper'
 # end
 
 class Intro
+  def start
+    scraper_intro
+    take_input
+    check_page
+  end
+
+  private
+
   def scraper_intro
     puts 'Welcome to The FPL Data Scraper'
     puts 'Here you can get the data of Top FPL Players into your CSV file'
@@ -40,7 +48,7 @@ class Intro
     number = gets.chomp.strip.to_i
     until (number % 50).zero? && number != 0
       puts 'Invalid Number, please enter valid number'
-      number = gets.chomp.strip
+      number = gets.chomp.strip.to_i
     end
     @newnumber = (number / 50) - 1
   end
@@ -55,13 +63,14 @@ class Intro
       top100.pagination100
       @newnumber -= 1
     end
+    puts
+    puts 'Your file is ready!'
   end
 end
 
 intro = Intro.new
-intro.scraper_intro
-intro.take_input
-intro.check_page
+intro.start
+
 #  top100.csv
 
 # while %w[y Y].include?(play_again)
