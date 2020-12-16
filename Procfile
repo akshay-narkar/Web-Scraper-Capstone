@@ -1,1 +1,1 @@
-web: ruby bin/main.rb
+web: run ruby bin/main.rb
