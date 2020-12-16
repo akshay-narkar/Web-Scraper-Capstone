@@ -83,10 +83,10 @@ By default, the target of Scraper right now is to check the Top players in the w
 
 ## Test-driven development RSPEC
 
-The code includes unit testing using RSpec. To start the test, go to spec folder & run the next line in your terminal:
+The code includes unit testing using RSpec. To start the test, run the next line in your terminal:
 
 ```
-rspec scraper_rspec.rb
+rspec spec/scraper_rspec.rb
 ```
 
 ## 📡 Technologies used :
@@ -127,3 +127,5 @@ Give a :star: if you like this project!
 ## 📝 License
 
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+
+- You can add negative test cases.
