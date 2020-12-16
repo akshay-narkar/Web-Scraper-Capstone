@@ -1,6 +1,16 @@
-# Microverse - Ruby Capstone Project - Build your own scraper
+# 💎Ruby Capstone Project <br> ⚒ The FPL Scraper
 
-This project creates a Scraper that allows the user to search for Top players on [Fantasy Premier League](https://fantasy.premierleague.com) web site.
+A scraper is a tool that lets you collect and save data off documents that is visible on the screen.
+
+<img src="./screenshots/scraper.jpg"  width="30%">
+
+## NOT THIS!
+
+The FPL Scraper allows the user to search for Top players on [Fantasy Premier League](https://fantasy.premierleague.com) web site.
+
+<img src="./screenshots/fpl.jpg" width="30%">
+ 
+<br>
 
 Over 7.3 million players play the game & build their teams every week. With this scraper you can save the top team every week and compare the top players,
 check and compare their teams!
@@ -47,7 +57,7 @@ Then you can run the next command that starts the program.
 ruby bin/main.rb
 ```
 
-![screenshot](./screenshots/2.png)
+<img src="./screenshots/2.png" align= "center" width="40%">
 
 When the program starts, It is going to ask you to input the Top X number of players whose data you need saved.
 
@@ -57,15 +67,15 @@ When the program starts, It is going to ask you to input the Top X number of pla
 
 The scraper uses Selenium Webdriver API which uses Chrome to open the webpages to scrape
 
-![screenshot](./screenshots/3.png)
+<img src="./screenshots/3.png" align= "centre" width="40%">
 
 Once the scraper is done fetching, it puts all the data in data.csv
 
-![screenshot](./screenshots/csv.png)
+<img src="./screenshots/csv.png" align= "center" width="40%">
 
 To visit any of the player profiles, Ctrl + Click on the URLs
 
-![screenshot](./screenshots/linkviacsv.png)
+<img src="./screenshots/linkviacsv.png" align= "center" width="40%">
 
 By default, the target of Scraper right now is to check the Top players in the world overall but you can simply change the url to whichever league you need in the lib/scraper.rb file. Counter variable is added at the end for every link. Moreover this data could be used to plot charts and derive various stats.
 
@@ -75,18 +85,25 @@ By default, the target of Scraper right now is to check the Top players in the w
 
 ## Test-driven development RSPEC
 
-The code includes unit testing using RSpec. To start the test run the next line in your terminal:
+The code includes unit testing using RSpec. To start the test, go to spec folder & run the next line in your terminal:
 
 ```
-rspec
+rspec scraper_rspec.rb
 ```
 
-## Built With
+## 📡 Technologies used :
 
-- [Ruby](https://www.ruby-lang.org)
-- [VSCode](https://code.visualstudio.com/)
+- Ruby
+- RSpec - _Ruby Test Driven Development framework_
 
-## Authors:
+## 🔧 Tools used :
+
+- [VSCode](https://code.visualstudio.com/) - _As a code editor_
+- [Nokogiri](https://nokogiri.org/) - _Ruby gem as a Main tool_
+- [Rubocop](https://rubocop.org/) - _Ruby gem as a Ruby Linter_
+- [Google DevTools](https://developers.google.com/) - _Debugging tool_
+
+## Author:
 
 👤 **Akshay Narkar**
 
