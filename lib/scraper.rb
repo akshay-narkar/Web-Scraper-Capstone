@@ -1,9 +1,11 @@
 class TopHeader
   attr_accessor :browser, :gwdata, :counter
+  attr_reader :toparray, :top10
 
   def initialize
     @counter = 1
-    @top100 = []
+    @top10 = []
+    @toparray = []
     time = Time.now
     @timestamp = "#{time.day}-#{time.month}-#{time.year}"
   end
@@ -51,7 +53,8 @@ class Top < TopHeader
       temparray = [td1[0].text,
                    td1[1].xpath("//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[#{@namecounter}]/td[2]/text()")
                      .text, td1[1].css('strong')[0].text, hyperlink, td1[2].text, td1[3].text]
-      @top100 << overall
+      @top10 << overall
+      @toparray << temparray
       CSV.open("csvfiles/#{@timestamp}-GW#{@url}.csv", 'a+') { |csv| csv << temparray }
       @namecounter += 1
     end
