@@ -11,6 +11,10 @@ describe Top do
       top.counter = 1
       expect(top.browser_ini).to eq('https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=1')
     end
+    it 'Initializing the browser' do
+      top.counter = 1
+      expect(top.browser_ini).not_to eq('https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=10')
+    end
   end
 
   context 'Scraping multiple pages one after the other' do
@@ -19,8 +23,14 @@ describe Top do
     it 'Counter is passed and page 11 is used for pagination' do
       expect(top.pagination100.count).to eq(50)
     end
+    it 'Counter is passed and page 11 is used for pagination' do
+      expect(top.pagination100.count).not_to eq(51)
+    end
     it 'Counter is passed and page 11 is used for pagination & data is lesser than 50' do
       expect(top.pagination100.count).to be_truthy
+    end
+    it 'Counter is passed and page 11 is used for pagination & data is lesser than 50' do
+      expect(top.pagination100.count).not_to be_falsy
     end
   end
 
@@ -31,19 +41,42 @@ describe Top do
     it 'If the data scrapped is 50 or >50' do
       expect(gw.count).to eq(50)
     end
+    it 'If the data scrapped is 50 or >50' do
+      expect(gw.count).not_to eq(52)
+    end
     it 'If the data scrapped is <50 & count is not known' do
       expect(gw.count).to be_truthy
+    end
+    it 'If the data scrapped is <50 & count is not known' do
+      expect(gw.count).to_not be_falsy
     end
     it 'Inserting headers based on link into csv' do
       top.gwdata = gw
       expect(top.header).to be_truthy
     end
+  end
+
+  context 'Passing a random link from any of the league pages to checking for all methods with the link' do
+    top.browser = Watir::Browser.new
+    top.browser.goto 'https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=8'
+    gw = top.top100noko
+    it 'Inserting headers based on link into csv' do
+      top.gwdata = gw
+      expect(top.header).not_to be_falsy
+    end
     it 'Inserting indiviual rows in gw into csv' do
       top.gwdata = gw
       expect(top.top100.count).to eq(50)
     end
+    it 'Inserting indiviual rows in gw into csv' do
+      top.gwdata = gw
+      expect(top.top100.count).not_to eq(92)
+    end
     it 'If the data scrapped is <50 & count is not known' do
       expect(top.top100.count).to be_truthy
+    end
+    it 'If the data scrapped is <50 & count is not known' do
+      expect(top.top100.count).not_to be_falsy
     end
   end
 end
