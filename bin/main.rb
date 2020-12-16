@@ -16,10 +16,17 @@ class Intro
   private
 
   def scraper_intro
-    puts 'Welcome to The FPL Data Scraper'
-    puts 'Here you can get the data of Top FPL Players into your CSV file'
-    puts 'Insert a number in multiples of 50 to scrape data from'
-    puts 'If you input 50, top 50 players data with link would be available and so on'
+    puts
+    puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    puts 'x                                      x'
+    puts 'x     Welcome to the FPL Scraper!!!    x'
+    puts 'x                                      x'
+    puts 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    puts
+    puts "\nHere you can get the data of Top FPL Players into your CSV file. Currently scraping from League - Overall."
+    puts "\nInsert a number in multiples of 50 to scrape data from."
+    puts "\nIf you input 50, top 50 players data with link would be available and so on..."
+    puts
   end
 
   def take_input
@@ -41,7 +48,7 @@ class Intro
       top100.pagination100
       @newnumber -= 1
     end
-    puts "\n Your file is ready!"
+    puts "\nYour data has been scraped! Please check the file in csvfiles folder!"
   end
 end
 
