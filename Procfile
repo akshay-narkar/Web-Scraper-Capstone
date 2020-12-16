@@ -1,1 +1,1 @@
-run: ruby bin/main.rb
+web: bin
