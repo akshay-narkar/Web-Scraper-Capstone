@@ -1,6 +1,4 @@
 # rubocop: disable Layout/LineLength
-require 'watir'
-require 'webdrivers'
 
 class TopHeader
   attr_accessor :browser, :gwdata, :counter
