@@ -1,1 +1,1 @@
-worker: bin/main.rb
+worker: ruby bin/main.rb
