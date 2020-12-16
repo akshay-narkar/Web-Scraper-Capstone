@@ -40,6 +40,7 @@ class Intro
 
   def check_page
     top100 = Top.new
+    top100.browser_ini
     top100.top100noko
     top100.header
     top100.top100
