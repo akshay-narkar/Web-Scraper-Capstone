@@ -50,6 +50,13 @@ class Intro
       @newnumber -= 1
     end
     puts "\nYour data has been scraped! Please check the file in csvfiles folder!"
+    puts
+    puts 'It looks like this'
+    puts
+
+    puts top100.top10[0..5]
+    puts
+    puts '& so on ......'
   end
 end
 
