@@ -1,15 +1,22 @@
 # rubocop: disable Layout/LineLength
+require 'watir'
+require 'webdrivers'
+
 class TopHeader
-  attr_reader :gwdata, :records, :counter
+  attr_accessor :browser, :gwdata, :counter
 
   def initialize
-    @browser = Watir::Browser.new
-    @records = records
+    # @browser = Watir::Browser.new
     @counter = 1
-    @browser.goto "https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=#{counter}"
+    # @browser.goto "https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=#{counter}"
     @top100 = []
     time = Time.now
     @timestamp = "#{time.day}-#{time.month}-#{time.year}"
+  end
+
+  def browser_ini
+    @browser = Watir::Browser.new
+    @browser.goto "https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=#{counter}"
   end
 
   def top100noko
@@ -50,8 +57,8 @@ class Top < TopHeader
       @top100 << overall
       CSV.open("../csvfiles/#{@timestamp}-GW#{@url}.csv", 'a+') do |csv|
         csv << temparray
-        @namecounter += 1
       end
+      @namecounter += 1
     end
   end
 
