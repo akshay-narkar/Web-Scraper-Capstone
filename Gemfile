@@ -1,4 +1,5 @@
 source 'https://rubygems.org/'
+ruby '2.7.0'
 gem 'byebug'
 gem 'csv'
 gem 'nokogiri'
