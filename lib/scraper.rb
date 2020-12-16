@@ -13,7 +13,6 @@ class TopHeader
   end
 
   def top100noko
-    p @a
     @browser.element(xpath: '/html/body/main/div/div[2]/div[2]/div[1]/div/div[3]/div[2]/a').wait_until(&:present?)
     parse100 = Nokogiri::HTML(@browser.html)
     parsed100 = parse100.css('#root > div:nth-child(2) > div.Layout__Wrapper-eg6k6r-0.akyjM > div.Layout__Main-eg6k6r-1.haICgV > div > table > tbody')
@@ -24,7 +23,7 @@ class TopHeader
     td = gwdata.css('td')
     url = td[1].css('a')[0].attributes['href'].value
     @url = url[-2, 2]
-    CSV.open("#{@timestamp}-GW#{@url}.csv", 'w') do |csv|
+    CSV.open("../csvfiles/#{@timestamp}-GW#{@url}.csv", 'w') do |csv|
       csv << ['', '', "GameWeek #{@url}"]
       csv << [' ']
       csv << %w[Rank Name Team URL(Ctrl+Click_to_check_team) GW-Points Overall_Points]
@@ -49,7 +48,7 @@ class Top < TopHeader
       temparray = [td1[0].text, td1[1].xpath("//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[#{@namecounter}]/td[2]/text()").text,
                    td1[1].css('strong')[0].text, hyperlink, td1[2].text, td1[3].text]
       @top100 << overall
-      CSV.open("#{@timestamp}-GW#{@url}.csv", 'a+') do |csv|
+      CSV.open("../csvfiles/#{@timestamp}-GW#{@url}.csv", 'a+') do |csv|
         csv << temparray
         @namecounter += 1
       end
@@ -65,5 +64,3 @@ class Top < TopHeader
 end
 
 # rubocop: enable Layout/LineLength
-
-# welcome screen
