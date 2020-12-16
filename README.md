@@ -2,13 +2,11 @@
 
 A scraper is a tool that lets you collect and save data off documents that is visible on the screen.
 
-<img src="./screenshots/scraper.jpg"  width="30%">
-
-## NOT THIS!
+<img src="./screenshots/scraper.jpg" width="40%">
 
 The FPL Scraper allows the user to search for Top players on [Fantasy Premier League](https://fantasy.premierleague.com) web site.
 
-<img src="./screenshots/fpl.jpg" width="30%">
+<img src="./screenshots/fpl.jpg" width="40%">
  
 <br>
 
@@ -57,7 +55,7 @@ Then you can run the next command that starts the program.
 ruby bin/main.rb
 ```
 
-<img src="./screenshots/2.png" align= "center" width="40%">
+<img src="./screenshots/2.png"  width="60%">
 
 When the program starts, It is going to ask you to input the Top X number of players whose data you need saved.
 
@@ -67,15 +65,15 @@ When the program starts, It is going to ask you to input the Top X number of pla
 
 The scraper uses Selenium Webdriver API which uses Chrome to open the webpages to scrape
 
-<img src="./screenshots/3.png" align= "centre" width="40%">
+<img src="./screenshots/3.png"  width="60%">
 
 Once the scraper is done fetching, it puts all the data in data.csv
 
-<img src="./screenshots/csv.png" align= "center" width="40%">
+<img src="./screenshots/csv.png" width="60%">
 
 To visit any of the player profiles, Ctrl + Click on the URLs
 
-<img src="./screenshots/linkviacsv.png" align= "center" width="40%">
+<img src="./screenshots/linkviacsv.png"  width="60%">
 
 By default, the target of Scraper right now is to check the Top players in the world overall but you can simply change the url to whichever league you need in the lib/scraper.rb file. Counter variable is added at the end for every link. Moreover this data could be used to plot charts and derive various stats.
 
