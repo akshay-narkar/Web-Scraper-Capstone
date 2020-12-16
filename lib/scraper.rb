@@ -6,9 +6,7 @@ class TopHeader
   attr_accessor :browser, :gwdata, :counter
 
   def initialize
-    # @browser = Watir::Browser.new
     @counter = 1
-    # @browser.goto "https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=#{counter}"
     @top100 = []
     time = Time.now
     @timestamp = "#{time.day}-#{time.month}-#{time.year}"
