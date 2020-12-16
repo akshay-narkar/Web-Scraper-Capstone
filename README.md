@@ -1,6 +1,7 @@
 # Microverse - Ruby Capstone Project - Build your own scraper
 
 This project creates a Scraper that allows the user to search for Top players on [Fantasy Premier League](https://fantasy.premierleague.com) web site.
+
 Over 7.3 million players play the game & build their teams every week. With this scraper you can save the top team every week and compare the top players,
 check and compare their teams!
 
@@ -9,8 +10,6 @@ The data is displayed in a CSV file which gets appended everytime the scraper is
 I have build this scraper to have a set of top 50-100 players in the world for certain weeks and build a similar team/follow the player.
 
 Built using OOP principles.
-
-<!-- ![screenshoot](./scrapper.gif) -->
 
 ## Getting Started
 
@@ -85,6 +84,7 @@ rspec
 ## Built With
 
 - [Ruby](https://www.ruby-lang.org)
+- [VSCode](https://code.visualstudio.com/)
 
 ## Authors:
 
