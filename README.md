@@ -93,6 +93,7 @@ rspec spec/scraper_rspec.rb
 
 - Ruby
 - RSpec - _Ruby Test Driven Development framework_
+- Selenium
 
 ## 🔧 Tools used :
 
@@ -100,6 +101,16 @@ rspec spec/scraper_rspec.rb
 - [Nokogiri](https://nokogiri.org/) - _Ruby gem as a Main tool_
 - [Rubocop](https://rubocop.org/) - _Ruby gem as a Ruby Linter_
 - [Google DevTools](https://developers.google.com/) - _Debugging tool_
+- [Google Chrome](https://www.google.com/chrome/) - Web Browser for scraping
+
+## Troubleshooting :
+
+Web driver Needs Chrome browser to be installed in a particular directory. Please check the following link to place the same there.
+
+```
+https://stackoverflow.com/questions/51091121/why-doesnt-chromedriver-require-chrome-or-chromium
+
+```
 
 ## Author:
 
