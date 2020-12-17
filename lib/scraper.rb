@@ -48,7 +48,6 @@ class Top < TopHeader
                   Name: td1[1]
                     .xpath("//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[#{@namecounter}]/td[2]/text()")
                     .text,
-                  # //*[@id="root"]/div[2]/div[2]/div[1]/div/table/tbody/tr[44]/td[2]/text()
                   Team: td1[1].css('strong')[0].text, URL: url, GW: td1[2].text, Total: td1[3].text }
       temparray = [td1[0].text,
                    td1[1].xpath("//*[@id='root']/div[2]/div[2]/div[1]/div/table/tbody/tr[#{@namecounter}]/td[2]/text()")
