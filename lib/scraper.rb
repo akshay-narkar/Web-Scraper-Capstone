@@ -1,6 +1,6 @@
 class TopHeader
   attr_accessor :browser, :gwdata, :counter
-  attr_reader :toparray, :top10
+  attr_reader :top10
 
   def initialize
     @counter = 1
