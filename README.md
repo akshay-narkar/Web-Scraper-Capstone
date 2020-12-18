@@ -1,76 +1,142 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# 💎Ruby Capstone Project <br> ⚒ The FPL Scraper
 
-# Project Name
+A scraper is a tool that lets you collect and save data off documents that is visible on the screen.
 
-> One paragraph statement about the project.
+<img src="./screenshots/scraper.jpg" width="40%">
 
-![screenshot](./app_screenshot.png)
+The FPL Scraper allows the user to search for Top players on [Fantasy Premier League](https://fantasy.premierleague.com) web site.
 
-Additional description about the project and its features.
+<img src="./screenshots/fpl.jpg" width="40%">
+ 
+<br>
 
-## Built With
+Over 7.3 million players play the game & build their teams every week. With this scraper you can save the top team every week and compare the top players,
+check and compare their teams!
 
-- Major languages
-- Frameworks
-- Technologies used
+The data is displayed in a CSV file which gets appended everytime the scraper is run in the bin folder.
 
-## Live Demo
+I have build this scraper to have a set of top 50-100 players in the world for certain weeks and build a similar team/follow the player.
 
-[Live Demo Link](https://livedemo.com)
-
+Built using OOP principles.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get started, you should first get this file in your local machine by downloading this project or typing.
 
-
-To get a local copy up and running follow these simple example steps.
+```git
+git clone https://github.com/akshay-narkar/Web-Scraper-Capstone.git
+```
 
 ### Prerequisites
 
-### Setup
+Before you start using the scraper, you need to be sure that you have Ruby installed on your computer, by typing.
 
-### Install
+```
+ruby -v
+```
 
-### Usage
+and it should return something like.
 
-### Run tests
+####### ruby 2.7.##### (20##-##-## revision 6####) [########]
 
-### Deployment
+If it's not installed in your system, follow this [guide](https://www.ruby-lang.org/en/documentation/installation/) and it will help you to get it done.
 
+## Running the Program
 
+You need to open your terminal and go to the downloaded folder, then You need to run the next command to install the gems.
 
-## Authors
+```
+bundle install
+```
 
-👤 **Author1**
+Then you can run the next command that starts the program.
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+```
+ruby bin/main.rb
+```
 
-👤 **Author2**
+<img src="./screenshots/2.png"  width="60%">
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/linkedinhandle)
+When the program starts, It is going to ask you to input the Top X number of players whose data you need saved.
+
+```
+150
+```
+
+The scraper uses Selenium Webdriver API which uses Chrome to open the webpages to scrape
+
+<img src="./screenshots/3.png"  width="60%">
+
+Once the scraper is done fetching, it puts all the data in data.csv
+
+<img src="./screenshots/csv.png" width="60%">
+
+To visit any of the player profiles, Ctrl + Click on the URLs
+
+<img src="./screenshots/linkviacsv.png"  width="60%">
+
+By default, the target of Scraper right now is to check the Top players in the world overall but you can simply change the url to whichever league you need in the lib/scraper.rb file. Counter variable is added at the end for every link. Moreover this data could be used to plot charts and derive various stats.
+
+```
+@browser.goto "https://fantasy.premierleague.com/leagues/314/standings/c?phase=1&page_new_entries=1&page_standings=#{counter}"
+```
+
+## Test-driven development RSPEC
+
+The code includes unit testing using RSpec. To start the test, run the next line in your terminal:
+
+```
+rspec spec/scraper_rspec.rb
+```
+
+## 📡 Technologies used :
+
+- Ruby
+- RSpec - _Ruby Test Driven Development framework_
+- Selenium
+
+## 🔧 Tools used :
+
+- [VSCode](https://code.visualstudio.com/) - _As a code editor_
+- [Nokogiri](https://nokogiri.org/) - _Ruby gem as a Main tool_
+- [Rubocop](https://rubocop.org/) - _Ruby gem as a Ruby Linter_
+- [Google DevTools](https://developers.google.com/) - _Debugging tool_
+- [Google Chrome](https://www.google.com/chrome/) - Web Browser for scraping
+
+## Troubleshooting :
+
+Web driver Needs Chrome browser to be installed in a particular directory. Please check the following link to place the same there.
+
+```
+https://stackoverflow.com/questions/51091121/why-doesnt-chromedriver-require-chrome-or-chromium
+
+```
+
+## Author:
+
+👤 **Akshay Narkar**
+
+- Github: [@akshay-narkar](https://github.com/akshay-narkar)
+- Twitter: [@akidoit](https://twitter.com/akidoit)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions, issues and feature requests are welcome! Start by:
 
-Feel free to check the [issues page](issues/).
+- Forking the project
+- Cloning the project to your local machine
+- `cd` into the project directory
+- Run `git checkout -b your-branch-name`
+- Make your contributions
+- Push your branch up to your forked repository
+- Open a Pull Request with a detailed description to the development branch of the original project for a review
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+Give a :star: if you like this project!
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+
+- You can add negative test cases.
