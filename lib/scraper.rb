@@ -28,7 +28,7 @@ class TopHeader
     td = gwdata.css('td')
     url = td[1].css('a')[0].attributes['href'].value
     @url = url[-2, 2]
-    CSV.open("csvfiles/#{@timestamp}-GW#{@url}.csv", 'w') do |csv|
+    CSV.open("csvfiles/#{@timestamp}-GW#{@url}.csv", 'w+') do |csv|
       csv << ['', '', "GameWeek #{@url}"]
       csv << [' ']
       csv << %w[Rank Name Team URL(Ctrl+Click_to_check_team) GW-Points Overall_Points]
