@@ -17,7 +17,7 @@ class TopHeader
   end
 
   def top100noko
-    @browser.element(xpath: '/html/body/main/div/div[2]/div[2]/div[1]/div/div[3]/div[2]/a').wait_until(&:present?)
+    @browser.element(xpath: '/html/body/main/div/div[2]/div[2]/div[1]/div/div[4]/div[2]/a').wait_until(&:present?)
     parse100 = Nokogiri::HTML(@browser.html)
     parsed100 = parse100.css('#root > div:nth-child(2) > div.Layout__Wrapper-eg6k6r-0.akyjM > '\
      ' div.Layout__Main-eg6k6r-1.haICgV > div > table > tbody')
